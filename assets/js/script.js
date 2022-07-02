@@ -29,10 +29,10 @@ function generatePassword(){
         window.alert("Please enter a number greater than 8 but less than 128");
     }
 
-    var lowerCase = window.prompt("Would you like your password to include lowercase letters? Type the letter Y for yes or N for no. Click on OK to continue.");
-    var upperCase = window.prompt("Would you like your password to include uppercase letters? Type the letter Y for yes or N for no. Click on OK to continue.");
-    var numbers = window.prompt("Would you like your password to include numbers? Type the letter Y for yes or N for no. Click on OK to continue.");
-    var specialCharacters = window.prompt("Would you like your password to include special characters? Type the letter Y for yes or N for no. Click on OK to continue.");
+    var lowerCase = window.prompt("Would you like your password to include lowercase letters? Type the letter Y for yes or N for no (be sure to type capital letters). Click on OK to continue.");
+    var upperCase = window.prompt("Would you like your password to include uppercase letters? Type the letter Y for yes or N for no (be sure to type capital letters). Click on OK to continue.");
+    var numbers = window.prompt("Would you like your password to include numbers? Type the letter Y for yes or N for no (be sure to type capital letters). Click on OK to continue.");
+    var specialCharacters = window.prompt("Would you like your password to include special characters? Type the letter Y for yes or N for no (be sure to type capital letters). Click on OK to continue.");
     // empty arrays to hold the final volues after performing getrandom function. 
     var selCharacters = [];
     var confirmCharacters = [];
@@ -64,8 +64,8 @@ function generatePassword(){
         confirmCharacters.push(getRandom(special))
     } 
 
-    var splitCharacters = selCharacters;
-    // difining the value of option as a length property with the value of passwordLength
+
+    // defining the value of option as a length property with the value of passwordLength
     var option = {
         length: passwordLength,
     } 
@@ -76,30 +76,11 @@ function generatePassword(){
         finalResult.push(selCharacters);
     }
 
-
-
-
-    // for ( var i = 0; i < passwordLength.length; i++){
-    //     var selCharacters = getRandom(selCharacters);
-    //     finalResult.push(selCharacters);
-    //     console.log(passwordLength[i])
-    // }
-
     // Ensures the finalResult and confirmCharacters are the same length
     for (var i = 0; i < confirmCharacters.length; i++){
         finalResult[i] = confirmCharacters[i];
     }
     return finalResult.join('');
-
-
-
-    // var randomCharacters = Math.floor(Math.random(splitCharacters) * passwordLength.length);
-    //     let passwordText = randomCharacters;
-    // console.log(splitCharacters);
-    // console.log(randomCharacters);
-    // console.log(passwordText);
-    // return;
-
 } 
 
 function getRandom(arr){
@@ -107,29 +88,5 @@ function getRandom(arr){
     var randomEl = arr[randomIndex];
     return randomEl;
 }
-
-// function generateInput(){
-//     if(lowerCase === 'Y'){
-//         selCharacters = selCharacters.concat(lcLetters);
-//         console.log('This works')
-//     } if (upperCase === "Y"){
-//         selCharacters = selCharacters.concat(ucLetters);
-//     }if(numbers === "Y"){
-//         selCharacters = selCharacters.concat(number);
-//     } if(specialCharacters ==="Y"){
-//         selCharacters = selCharacters.concat(special);
-//     } 
-// }
-
-// function newPassword(){
-//     if(selCharacters.length < numbers.length || passwordLength < 8 ){
-//         window.alert('FIX LATER');
-//     } else {
-//     for ( i = 0; i<passwordLength; i++){
-//         generatedPassword += selCharacters[Math.floor(Math.random()*(selCharacters.length - 1))];
-//     }
-//     generatedPassword = [];
-//     } 
-
 
 
